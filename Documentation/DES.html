@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module DES</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>DES</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/matthiasberjola/Desktop/M1info/S2/Securite/Projet/DES.py">/Users/matthiasberjola/Desktop/M1info/S2/Securite/Projet/DES.py</a></font></td></tr></table>
+    <p><tt>#Module&nbsp;pour&nbsp;chiffrer/déchiffrer&nbsp;un&nbsp;message&nbsp;en&nbsp;utilisant&nbsp;le&nbsp;DES</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="base64.html">base64</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-DESCode"><strong>DESCode</strong></a>(message, cle, decode=False)</dt><dd><tt>#&nbsp;Fonction&nbsp;permettant&nbsp;d'effectuer&nbsp;le&nbsp;chiffrement&nbsp;DES<br>
+#&nbsp;ENTREE&nbsp;:&nbsp;message&nbsp;binaire&nbsp;,&nbsp;cle<br>
+#&nbsp;SORTIE&nbsp;:&nbsp;message&nbsp;binaire&nbsp;codé/décodé</tt></dd></dl>
+ <dl><dt><a name="-feistel_fct"><strong>feistel_fct</strong></a>(block_R, subkey)</dt><dd><tt>#&nbsp;ENTREE&nbsp;:&nbsp;bloc&nbsp;de&nbsp;droite&nbsp;du&nbsp;message&nbsp;32bits&nbsp;(int2),&nbsp;sous-clés&nbsp;de&nbsp;48bits&nbsp;correspondant&nbsp;à&nbsp;l'itération&nbsp;en&nbsp;cours<br>
+#&nbsp;SORTIE&nbsp;:&nbsp;Bloc&nbsp;de&nbsp;32&nbsp;bits&nbsp;(int2)</tt></dd></dl>
+ <dl><dt><a name="-left_rotation"><strong>left_rotation</strong></a>(block, k)</dt><dd><tt>#&nbsp;ENTREE&nbsp;:&nbsp;Un&nbsp;bloc&nbsp;binaire&nbsp;(int2)&nbsp;de&nbsp;taille&nbsp;56<br>
+#&nbsp;SORTIE&nbsp;:&nbsp;Le&nbsp;bloc&nbsp;décalé&nbsp;à&nbsp;gauche&nbsp;de&nbsp;k&nbsp;bits&nbsp;(int(2))</tt></dd></dl>
+ <dl><dt><a name="-permutation"><strong>permutation</strong></a>(block, block_length, perm_table)</dt><dd><tt>#&nbsp;ENTREE&nbsp;:&nbsp;Un&nbsp;bloc&nbsp;binaire&nbsp;(int2),&nbsp;une&nbsp;table&nbsp;de&nbsp;permutation<br>
+#&nbsp;SORTIE&nbsp;:&nbsp;Le&nbsp;bloc&nbsp;binaire&nbsp;permuté&nbsp;(int2)</tt></dd></dl>
+ <dl><dt><a name="-subkeys"><strong>subkeys</strong></a>(cle)</dt><dd><tt>#&nbsp;Fonction&nbsp;qui&nbsp;calcule&nbsp;et&nbsp;retourne&nbsp;la&nbsp;liste&nbsp;des&nbsp;16&nbsp;sous-clés&nbsp;(48&nbsp;bits)<br>
+#&nbsp;ENTREE&nbsp;:&nbsp;Cle&nbsp;binaire&nbsp;64&nbsp;bits&nbsp;(str),&nbsp;k_rot&nbsp;décalage&nbsp;binaire<br>
+#&nbsp;SORTIE&nbsp;:&nbsp;Dictionnaire&nbsp;des&nbsp;16&nbsp;sous-clés&nbsp;de&nbsp;48&nbsp;bits&nbsp;(str)</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>E</strong> = (32, 1, 2, 3, 4, 5, 4, 5, 6, 7, 8, 9, 8, 9, 10, 11, 12, 13, 12, 13, ...)<br>
+<strong>FP</strong> = (40, 8, 48, 16, 56, 24, 64, 32, 39, 7, 47, 15, 55, 23, 63, 31, 38, 6, 46, 14, ...)<br>
+<strong>IP</strong> = (58, 50, 42, 34, 26, 18, 10, 2, 60, 52, 44, 36, 28, 20, 12, 4, 62, 54, 46, 38, ...)<br>
+<strong>Nrot</strong> = (1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1)<br>
+<strong>P</strong> = (16, 7, 20, 21, 29, 12, 28, 17, 1, 15, 23, 26, 5, 18, 31, 10, 2, 8, 24, 14, ...)<br>
+<strong>PC1</strong> = (57, 49, 41, 33, 25, 17, 9, 1, 58, 50, 42, 34, 26, 18, 10, 2, 59, 51, 43, 35, ...)<br>
+<strong>PC2</strong> = (14, 17, 11, 24, 1, 5, 3, 28, 15, 6, 21, 10, 23, 19, 12, 4, 26, 8, 16, 7, ...)<br>
+<strong>Sboxes</strong> = {0: (14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7, 0, 15, 7, 4, ...), 1: (15, 1, 8, 14, 6, 11, 3, 4, 9, 7, 2, 13, 12, 0, 5, 10, 3, 13, 4, 7, ...), 2: (10, 0, 9, 14, 6, 3, 15, 5, 1, 13, 12, 7, 11, 4, 2, 8, 13, 7, 0, 9, ...), 3: (7, 13, 14, 3, 0, 6, 9, 10, 1, 2, 8, 5, 11, 12, 4, 15, 13, 8, 11, 5, ...), 4: (2, 12, 4, 1, 7, 10, 11, 6, 8, 5, 3, 15, 13, 0, 14, 9, 14, 11, 2, 12, ...), 5: (12, 1, 10, 15, 9, 2, 6, 8, 0, 13, 3, 4, 14, 7, 5, 11, 10, 15, 4, 2, ...), 6: (4, 11, 2, 14, 15, 0, 8, 13, 3, 12, 9, 7, 5, 10, 6, 1, 13, 0, 11, 7, ...), 7: (13, 2, 8, 4, 6, 15, 11, 1, 10, 9, 3, 14, 5, 0, 12, 7, 1, 15, 13, 8, ...)}</td></tr></table>
+</body></html>

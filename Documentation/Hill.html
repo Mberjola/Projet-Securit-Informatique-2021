@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Hill</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Hill</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/matthiasberjola/Desktop/M1info/S2/Securite/Projet/Hill.py">/Users/matthiasberjola/Desktop/M1info/S2/Securite/Projet/Hill.py</a></font></td></tr></table>
+    <p><tt>#Module&nbsp;qui&nbsp;sert&nbsp;à&nbsp;chiffrer/dechiffrer&nbsp;un&nbsp;message&nbsp;en&nbsp;utilisant&nbsp;le&nbsp;chiffrement&nbsp;de&nbsp;Hill</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-HillCode"><strong>HillCode</strong></a>(mot, a, b, c, d)</dt><dd><tt>#Fonction&nbsp;pour&nbsp;coder&nbsp;un&nbsp;mot&nbsp;en&nbsp;utilisant&nbsp;le&nbsp;chiffre&nbsp;de&nbsp;Hill<br>
+#On&nbsp;considère&nbsp;ici&nbsp;que&nbsp;m=2&nbsp;tout&nbsp;le&nbsp;temps</tt></dd></dl>
+ <dl><dt><a name="-HillDcode"><strong>HillDcode</strong></a>(messagechiffrer, a, b, c, d)</dt><dd><tt>#Fonction&nbsp;pour&nbsp;déchiffrer&nbsp;le&nbsp;message&nbsp;<br>
+#On&nbsp;cherche&nbsp;l'inverse&nbsp;de&nbsp;la&nbsp;matrice&nbsp;<br>
+#Une&nbsp;fois&nbsp;cela&nbsp;fait&nbsp;on&nbsp;applique&nbsp;les&nbsp;mêmes&nbsp;étapes&nbsp;que&nbsp;pour&nbsp;le&nbsp;chiffrement&nbsp;mais&nbsp;avec&nbsp;la&nbsp;matrice&nbsp;inverse</tt></dd></dl>
+ <dl><dt><a name="-getDet"><strong>getDet</strong></a>(a, b, c, d)</dt><dd><tt>#Fonction&nbsp;qui&nbsp;retourne&nbsp;le&nbsp;déterminant&nbsp;d'une&nbsp;matrice</tt></dd></dl>
+ <dl><dt><a name="-inversedet"><strong>inversedet</strong></a>(a, b)</dt><dd><tt>#Fonction&nbsp;qui&nbsp;calcule&nbsp;l'inverse&nbsp;du&nbsp;déterminant&nbsp;d'une&nbsp;matrice&nbsp;en&nbsp;utilisant&nbsp;l'algorithme&nbsp;d'Euclide&nbsp;étendu</tt></dd></dl>
+ <dl><dt><a name="-inversematrix"><strong>inversematrix</strong></a>(a, b, c, d)</dt><dd><tt>#Fonction&nbsp;qui&nbsp;calcule&nbsp;l'inverse&nbsp;d'une&nbsp;matrice&nbsp;et&nbsp;qui&nbsp;retourne&nbsp;la&nbsp;matrice&nbsp;inversée</tt></dd></dl>
+ <dl><dt><a name="-modulo95"><strong>modulo95</strong></a>(nb)</dt><dd><tt>#Fonction&nbsp;qui&nbsp;renvois&nbsp;le&nbsp;résultat&nbsp;de&nbsp;nb&nbsp;modulo&nbsp;95</tt></dd></dl>
+ <dl><dt><a name="-quelleplace"><strong>quelleplace</strong></a>(ch)</dt><dd><tt>#Fonction&nbsp;qui&nbsp;retourne&nbsp;le&nbsp;code&nbsp;ASCII&nbsp;du&nbsp;caractère&nbsp;passé&nbsp;en&nbsp;entrée&nbsp;ou&nbsp;le&nbsp;caractère&nbsp;correspondant&nbsp;au&nbsp;code&nbsp;ascii&nbsp;en&nbsp;entrée<br>
+#Exemple<br>
+#Entrée:&nbsp;'A'<br>
+#Sortie:&nbsp;33<br>
+#Entrée:&nbsp;33<br>
+#Sortie:&nbsp;A</tt></dd></dl>
+</td></tr></table>
+</body></html>
